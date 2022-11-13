@@ -1,0 +1,156 @@
+/* Esto es para resetear el css */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Le damos un fondo de fotografía a toda la página
+cover nos ayuda a que la foto cubra todo el espacio disponible */
+body{
+    background-image: url(../img/cielo.webp);
+    background-size: cover;
+    
+}
+
+/* El encabezado de la página aparecerá siempre en la parte de arriba,
+para eso sirve las funciones sticky y top.*/
+header{
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    display: grid;
+    /* El header es una grilla de dos columnas y una fila */
+    grid-template-columns: 20% 80%;
+    height: 15vw;
+    grid-template-areas: "a1 a2"; 
+    z-index: 1;
+
+}
+
+/* El logotipo ocupa la parte izquierda del header. */
+#logo{
+    grid-area: "a1";
+    padding: 10%; 
+    height: 15vw;
+   
+}
+
+#header_derecha{
+    grid-area: "a2";    
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 900;
+    text-align: center;
+}
+
+#titulo_aldan{
+    text-align: center;
+    color: rgb(9, 0, 48);
+    font-size: 7vw;
+    padding-top: 0.5vw;
+}
+
+nav{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   font-weight: 400;
+    
+}
+
+a{
+    text-decoration: none;
+}
+ 
+li:hover{
+    transform: scale(1.2);
+}
+
+ul{
+    width: 60%;
+    justify-content: center;
+    justify-content: space-evenly;
+    list-style: none;
+    
+}
+
+.navbar{
+    display: flex;
+}
+
+main{ 
+    font-family: 'Inter Tight', sans-serif;
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+}
+
+#titulo_main_home{
+    color: white;
+    justify-items: center;
+    font-size: 60px;
+}
+
+
+#carouselExampleControls{
+   width: 600px;
+        
+}
+
+
+label{
+    font-size: 12px;
+}
+
+::placeholder{
+    font-size: 9px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: oblique;
+}
+
+button{
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: bold;
+}
+
+
+#texto_home{
+    text-align: center;
+}
+
+#video_home{
+    padding-top: 20px;
+    padding-bottom: 50px;
+    width: 400px;
+}
+
+
+#formulario{
+    text-align: center;
+}
+
+footer{
+    height: 40px;
+    color: white;
+    background-color:rgb(4, 0, 22);
+    font-family: 'Inter Tight', sans-serif; 
+    font-weight: 200;
+    font-size: 12px;   
+    display: flex;
+    padding: 10px;
+    justify-content: flex-start;
+    
+}
+
+
+
+
+#carouselExampleControls{
+      
+    width: 400px;
+            
+}
+    
+
+
