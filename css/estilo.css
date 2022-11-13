@@ -25,52 +25,44 @@ header {
   height: 15vw;
   grid-template-areas: "a1 a2";
   z-index: 1;
+  /* El logotipo ocupa la parte izquierda del header. */
 }
-
-/* El logotipo ocupa la parte izquierda del header. */
-#logo {
+header #logo {
   grid-area: "a1";
   padding: 10%;
   height: 15vw;
 }
-
-#header_derecha {
+header #header_derecha {
   grid-area: "a2";
   font-family: "Inter Tight", sans-serif;
   font-weight: 900;
   text-align: center;
 }
-
-#titulo_aldan {
+header #titulo_aldan {
   text-align: center;
   color: rgb(9, 0, 48);
   font-size: 7vw;
   padding-top: 0.5vw;
 }
-
-nav {
+header nav {
   width: 100%;
   display: flex;
   justify-content: center;
   font-weight: 400;
 }
-
-a {
+header a {
   text-decoration: none;
 }
-
-li:hover {
+header li:hover {
   transform: scale(1.2);
 }
-
-ul {
+header ul {
   width: 60%;
   justify-content: center;
   justify-content: space-evenly;
   list-style: none;
 }
-
-.navbar {
+header .navbar {
   display: flex;
 }
 
@@ -82,8 +74,7 @@ main {
   flex-direction: column;
   justify-content: center;
 }
-
-#titulo_main_home {
+main #titulo_main_home {
   color: white;
   justify-items: center;
   font-size: 60px;
@@ -91,6 +82,15 @@ main {
 
 #carouselExampleControls {
   width: 600px;
+}
+
+#formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  padding: 5%;
 }
 
 label {
@@ -130,10 +130,6 @@ button {
   width: 400px;
 }
 
-#formulario {
-  text-align: center;
-}
-
 @media only screen and (max-width: 600px) {
   #titulo_aldan {
     text-align: center;
@@ -156,4 +152,8 @@ footer {
 
 #carouselExampleControls {
   width: 400px;
+}
+
+.fotos_servicios {
+  width: 100px;
 }/*# sourceMappingURL=estilo.css.map */
