@@ -130,6 +130,17 @@ button{
     text-align: center;
 }
 
+@media only screen and (max-width: 600px) {
+    
+    #titulo_aldan{
+        text-align: center;
+        color: rgb(9, 0, 48);
+        font-size: 40px;
+        padding-top: 20px;
+    }
+
+}
+
 footer{
     height: 40px;
     color: white;
@@ -143,13 +154,8 @@ footer{
     
 }
 
-
-
-
-#carouselExampleControls{
-      
-    width: 400px;
-            
+#carouselExampleControls{ 
+    width: 400px;        
 }
     
 
