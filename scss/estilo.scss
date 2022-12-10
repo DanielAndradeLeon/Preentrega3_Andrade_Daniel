@@ -1,178 +1,398 @@
-/* Esto es para resetear el css */
+/* Reseteamos el margin y el padding del CSS */
 *{
     margin: 0;
     padding: 0;
 }
 
-/* Le damos un fondo de fotografía a toda la página
-cover nos ayuda a que la foto cubra todo el espacio disponible */
-body{
-    background-image: url(../img/cielo.webp);
-    background-size: cover;
-    
+img{
+    border-radius: 20px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
+/*Definimos variables para los colores de la paleta*/
 
+$azul_oscuro: rgb(4, 0, 22);
+$azul_medio:  rgb(9, 0, 48);
+$celeste: rgb(41, 141, 223);
+$celeste_claro: rgb(160, 199, 236);
+
+/*Definimos variables para las fuentes*/
+
+$fuente_aldan: 'Inter Tight', sans-serif;
+
+
+/* Le damos un fondo de video fijo a toda la página con cierta opacidad */
+#myVideo {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    opacity: 0.8;
+    z-index: -5;
+  }
+  
 /* El encabezado de la página aparecerá siempre en la parte de arriba,
-para eso sirve las funciones sticky y top.*/
+para eso sirve las funciones position fixed y top.
+Ubicamos logo y nombre de la empresa en el header*/
 header{
-    position: sticky;
+    position: absolute;
     top: 0px;
-    background-color: white;
-    display: grid;
-    /* El header es una grilla de dos columnas y una fila */
-    grid-template-columns: 20% 80%;
-    height: 15vw;
-    grid-template-areas: "a1 a2"; 
+    background: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 6vw;
     z-index: 1;
+    padding: 5px;
 
-    /* El logotipo ocupa la parte izquierda del header. */
+ 
     #logo{
-      grid-area: "a1";
-      padding: 10%; 
-      height: 15vw;
-
+        height: 5.5vw;
     }
 
-    #header_derecha{
-        grid-area: "a2";    
-        font-family: 'Inter Tight', sans-serif;
-        font-weight: 900;
-        text-align: center;
-    }
 
     #titulo_aldan{
         text-align: center;
-        color: rgb(9, 0, 48);
-        font-size: 7vw;
-        padding-top: 0.5vw;
-    }
-
-    nav{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        font-weight: 400;
-         
-     }
-
-     a{
-        text-decoration: none;
-    }
-     
-    li:hover{
-        transform: scale(1.2);
+        color: $azul_medio;
+        font-family: $fuente_aldan;
+        font-weight: 200;
+        font-size: 5vw;
+        padding: 5px;
     }
     
-    ul{
-        width: 60%;
-        justify-content: center;
-        justify-content: space-evenly;
-        list-style: none;
-        
-    }
-    
+}
+
+// La barra de navegación va fuera del header, debajo de éste.
+// Usamos la función sticky, y para que vaya debajo del header,
+// top es igual el heigth del header.
+nav{
+    position:relative;
+    top: 6vw;
+    z-index: 1;
+    // Hacemos flexible al ul para que los hijos a(vínculos a páginas) se alineen.
     .navbar{
         display: flex;
-    }
+        background-color: $azul_oscuro;
+        opacity: 0.7;
+        display: flex;
+        width: 100%;
+        align-content: center;
+        justify-content: space-evenly;
+        font-weight: 400;
+        list-style: none;
+        margin: 0;
+        padding: 5px;
+       
 
-   
+        a{
+            text-decoration: none;
+            font-family: $fuente_aldan;
+            font-size: 18px;
+        }
+
+            
+        li:hover{
+            transform: scale(1.2); 
+        }
+    
+    }
 }
 
-
-
-main{ 
-    font-family: 'Inter Tight', sans-serif;
-    margin-top: 50px;
-    text-align: center;
+.main_home{ 
+    font-family: $fuente_aldan;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    z-index: -1;
+   
 
     #titulo_main_home{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
         color: white;
-        justify-items: center;
-        font-size: 60px;
+        font-size: 7vw;
+        font-weight: 200;
+        width: 80%;
+     
+    }
+
+    #texto_main_home{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: space-between;
+        color: $azul_medio;
+        background-color: rgba(255, 255, 255, 0.5);
+        width: 70%;
+        font-weight: 100;
+        text-justify: auto;
+        text-align: center;
+        border-radius: 20px;
+        padding: 20px;
+
     }
     
+    #carousel_main_home{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        width: 70%;
+        margin-bottom: 50px;
+
+        .carousel-item{
+            background-size: cover;
+        }
+
+        .carousel-item-active{
+            background-size: cover;
+        }
+       
+    }
+
 }
 
-
-
-#carouselExampleControls{
-   width: 600px;
-        
-}
-
-
-#formulario{
+.main_servicios{
+    font-family: $fuente_aldan;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 20%;
-    padding: 5%;
-}
+    justify-content: space-evenly;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    z-index: -1;
 
-
-label{
-    font-size: 12px;
-}
-
-::placeholder{
-    font-size: 9px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-style: oblique;
-}
-
-button{
-    font-family: 'Inter Tight', sans-serif;
-    font-weight: bold;
-}
-
-
-#texto_home{
-    text-align: center;
-}
-
-#video_home{
-    padding-top: 20px;
-    padding-bottom: 50px;
-    width: 400px;
-}
-
-
-
-@media only screen and (max-width: 600px) {
-    
-    #titulo_aldan{
+    .titulos_servicios{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        color: white;
+        font-size: 50px;
+        font-weight: 400;
         text-align: center;
-        color: rgb(9, 0, 48);
+        margin: 20px;
+        
+    }
+
+    .textos_servicios{
+        font-family: $fuente_aldan;
+        font-size: 20px;
+        color: white;
+        text-align: center;
+        margin: 20px;
+    }
+    
+    .fotos_servicios{
+        width: 50%;
+        margin: 10px;
+    }
+
+}
+
+.main_productos{
+    font-family: $fuente_aldan;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    color: white;
+    z-index: -1;
+
+    .fotos_productos{
+        margin: 20px;
+    }  
+
+}
+    
+
+
+.main_contacto{
+    font-family: $fuente_aldan;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 100px;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    margin-bottom: 100px;
+
+    .titulo_main_contacto{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        color: white;
         font-size: 40px;
-        padding-top: 20px;
+        font-weight: 300;
+        position: relative;
+        top: 0;
+      
+    }
+
+    .section_main_contacto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: space-between;
+        color: $azul_medio;
+        background-color: rgba(255, 255, 255, 0.5);
+        width: 100%;
+        font-weight: 300;
+        text-justify: auto;
+        text-align: center;
+        border-radius: 20px;
+        padding: 20px;
+        margin: 10px;
+        position: relative;
+        top: 0;
+    }
+
+    #formulario{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 5%;
+        position: relative;
+        top: 0;
+    }
+
+    label{
+        font-size: 20px;
+        color: white;
+        border-style: none;
+        text-align: left;
+      //  justify-items: left;
+
+    }
+
+    input{
+        border-radius: 20px;
+        border-style: none;
+        padding: 10px;
+        margin: 10px;
+        width: 95%;
+    }
+
+    ::placeholder{
+        font-size: 12px;
+        font-family: $fuente_aldan;
+        font-style: oblique;
+    }
+
+    textarea{
+        border-radius: 20px;
+        border-style: none;
+        padding: 20px;
+        margin: 10px;
+    }
+
+    button{
+        font-family: $fuente_aldan;
+        font-weight: 500;
+        border-radius: 10px;
+        border-style: none;
+        padding: 5px;
+        margin-bottom: 20px ;
+        width: 100%;
+        background-color: $celeste;
     }
 
 }
 
 footer{
-    height: 40px;
     color: white;
-    background-color:rgb(4, 0, 22);
-    font-family: 'Inter Tight', sans-serif; 
-    font-weight: 200;
+    background-color:$azul_oscuro;
+    font-family: $fuente_aldan; 
+    font-weight: 100;
     font-size: 12px;   
     display: flex;
     padding: 10px;
-    justify-content: flex-start;
+    justify-content: space-evenly;
+    align-content: space-between;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+
     
+.ubicacion{
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    text-align: center;
+    font-family: $fuente_aldan;
+    font-weight: 300;
+    color: white;
+    margin-bottom: 100px;
+
+    iframe{
+        border-radius: 20px;
+    }
+
+   
 }
 
-#carouselExampleControls{ 
-    width: 400px;        
-}
+@media only screen and (max-width: 600px) {
 
-.fotos_servicios{
-    width: 100px;
-}
+    header{
+
+        height: 16vw;
+
+        #logo{
+            height: 14vw;
+        }
     
+        #titulo_aldan{
+            font-size: 8vw;
+        }
+    }
 
+    nav{
+        top: 16vw;
+        .navbar{
+            display: flex;
+            flex-direction: column; 
+            
+        }
+    }
 
+    footer{
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .main_home{
+        #carousel_main_home{
+            width: 90%;
+        }
+
+    #titulo_main_home{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .titulo{
+            font-size: 25px;
+        }   
+    }
+       
+
+    }
+}

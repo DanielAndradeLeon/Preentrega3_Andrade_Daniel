@@ -21,41 +21,73 @@
     <title>Servicios - Aldan Industries - Router CNC - Corte Láser</title>
 </head>
 <body>
-    <header>
+      <!-- Insertamos un video que sirva de background al inicio -->
+      <video autoplay muted loop id="myVideo">
+        <source src="../video/Video ALDAN largo sin logo.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+  
+      <header>
         <!-- Insertamos el logotipo de la empresa: -->
-        <img src="../img/logo_aldan_original.svg" alt="" id="logo">
-        <div id="header_derecha">
-            <h1 id="titulo_aldan">aldan industries</h1>
-            <nav>
-                <ul class="navbar">
-                    <li><a href="../index.html">Home</a>
-                    </li>
-                    <li><a href="productos.html">Productos</a>
-                    </li>
-                    <li><a href="servicios.html">Servicios</a>
-                    </li>
-                    <li><a href="ubicacion.html">Ubicación</a>
-                    </li>
-                    <li><a href="contacto.html">Contacto</a>
-                    </li>
-                </ul>
-            </nav>
-       </div>
-    </header>
+        <img id="logo" src="../img/logo_aldan_original.svg" alt="">
+        <h1 id="titulo_aldan">Aldan Industries</h1>
+  
+      </header>
+  
+      <nav>
+        <ul class="navbar">
+            <li><a href="../index.html">Home</a>
+            </li>
+            <li><a href="productos.html">Productos</a>
+            </li>
+            <li><a href="servicios.html">Servicios</a>
+            </li>
+            <li><a href="ubicacion.html">Ubicación</a>
+            </li>
+            <li><a href="contacto.html">Contacto</a>
+            </li>
+        </ul>
+      </nav>
     <main>
-        <h2>Corte y tallado con router CNC</h2>
-        <section>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, magnam accusantium facilis voluptatem error sed delectus saepe cumque aliquid, dicta architecto ipsam numquam nobis temporibus at odio voluptas possimus expedita.</section>
-        <img src="../img/Router.webp" alt="">
-        <h2>Impresión UV cama plana</h2>
-        <section>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, magnam accusantium facilis voluptatem error sed delectus saepe cumque aliquid, dicta architecto ipsam numquam nobis temporibus at odio voluptas possimus expedita.</section>
-        <img src="../img/UV flatbed.webp" alt="">
-        <h2>Corte y grabado láser</h2>
-        <section>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum perferendis vero ea impedit, quaerat molestiae sint esse quidem temporibus ex cupiditate iure reiciendis quibusdam fugiat voluptate eaque nisi minus accusantium!</section>
-        <img src="../img/laser.webp" alt="">
+      <div class="main_servicios">
+        <h2 class="titulos_servicios">Corte y tallado con router CNC</h2>
+        <section class="textos_servicios">Disponemos de 3 estaciones de router CNC de 2.40m x 1.20m.
+          Ofrecemos el servicio de corte y grabado en 2D y 3D.
+        </section>
+        <img class="fotos_servicios" src="../img/Router.webp" alt="">
+        <h2 class="titulos_servicios">Impresión UV cama plana</h2>
+        <section class="textos_servicios">Impresora con tintas UV para sustratos rígidos de 2.40m x 1.20m.</section>
+        <img class="fotos_servicios" src="../img/UV flatbed.webp" alt="">
+        <h2 class="titulos_servicios">Corte y grabado láser</h2>
+        <section class="textos_servicios">Servicio de corte y grabado láser 2.40m x 1.20m. Acrílico, madera, etc.</section>
+        <img class="fotos_servicios" src="../img/laser.webp" alt="">
+      </div>
     </main>
     <footer>
-        <p>Powered by Aldan Industries</p>
-    </footer>
+
+        <div id="powered">
+          <p>Powered by Aldan Industries</p>
+        </div>
+  
+        <div id="direccion">
+          <p>E7F Pasaje Soria Armas N5-199 y Villa Vega.
+            Tumbaco. Quito - Ecuador
+          </p>
+        </div>
+  
+        <div id="telefonos">
+          <p>Teléfono: 0997878480</p>
+        </div>
+  
+        <div id="redes">
+          <img id="facebook" src="" alt="">
+          <img id="instagram" src="" alt="">
+          <img id="pinterest" src="" alt="">
+          <img id="telegram" src="" alt="">
+          <img id="whatsapp" src="" alt="">
+        </div>
+  
+      </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,159 +1,337 @@
 @charset "UTF-8";
-/* Esto es para resetear el css */
+/* Reseteamos el margin y el padding del CSS */
 * {
   margin: 0;
   padding: 0;
 }
 
-/* Le damos un fondo de fotografía a toda la página
-cover nos ayuda a que la foto cubra todo el espacio disponible */
-body {
-  background-image: url(../img/cielo.webp);
-  background-size: cover;
+img {
+  border-radius: 20px;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/*Definimos variables para los colores de la paleta*/
+/*Definimos variables para las fuentes*/
+/* Le damos un fondo de video fijo a toda la página con cierta opacidad */
+#myVideo {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0.8;
+  z-index: -5;
 }
 
 /* El encabezado de la página aparecerá siempre en la parte de arriba,
-para eso sirve las funciones sticky y top.*/
+para eso sirve las funciones position fixed y top.
+Ubicamos logo y nombre de la empresa en el header*/
 header {
-  position: -webkit-sticky;
-  position: sticky;
+  position: absolute;
   top: 0px;
-  background-color: white;
-  display: grid;
-  /* El header es una grilla de dos columnas y una fila */
-  grid-template-columns: 20% 80%;
-  height: 15vw;
-  grid-template-areas: "a1 a2";
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 6vw;
   z-index: 1;
-  /* El logotipo ocupa la parte izquierda del header. */
+  padding: 5px;
 }
 header #logo {
-  grid-area: "a1";
-  padding: 10%;
-  height: 15vw;
-}
-header #header_derecha {
-  grid-area: "a2";
-  font-family: "Inter Tight", sans-serif;
-  font-weight: 900;
-  text-align: center;
+  height: 5.5vw;
 }
 header #titulo_aldan {
   text-align: center;
   color: rgb(9, 0, 48);
-  font-size: 7vw;
-  padding-top: 0.5vw;
-}
-header nav {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  font-weight: 400;
-}
-header a {
-  text-decoration: none;
-}
-header li:hover {
-  transform: scale(1.2);
-}
-header ul {
-  width: 60%;
-  justify-content: center;
-  justify-content: space-evenly;
-  list-style: none;
-}
-header .navbar {
-  display: flex;
+  font-family: "Inter Tight", sans-serif;
+  font-weight: 200;
+  font-size: 5vw;
+  padding: 5px;
 }
 
-main {
+nav {
+  position: relative;
+  top: 6vw;
+  z-index: 1;
+}
+nav .navbar {
+  display: flex;
+  background-color: rgb(4, 0, 22);
+  opacity: 0.7;
+  display: flex;
+  width: 100%;
+  align-content: center;
+  justify-content: space-evenly;
+  font-weight: 400;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+}
+nav .navbar a {
+  text-decoration: none;
   font-family: "Inter Tight", sans-serif;
-  margin-top: 50px;
-  text-align: center;
+  font-size: 18px;
+}
+nav .navbar li:hover {
+  transform: scale(1.2);
+}
+
+.main_home {
+  font-family: "Inter Tight", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  z-index: -1;
+}
+.main_home #titulo_main_home {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  font-size: 7vw;
+  font-weight: 200;
+  width: 80%;
+}
+.main_home #texto_main_home {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-content: space-between;
+  color: rgb(9, 0, 48);
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 70%;
+  font-weight: 100;
+  text-justify: auto;
+  text-align: center;
+  border-radius: 20px;
+  padding: 20px;
 }
-main #titulo_main_home {
+.main_home #carousel_main_home {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  margin-bottom: 50px;
+}
+.main_home #carousel_main_home .carousel-item {
+  background-size: cover;
+}
+.main_home #carousel_main_home .carousel-item-active {
+  background-size: cover;
+}
+
+.main_servicios {
+  font-family: "Inter Tight", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 100px;
+  margin-bottom: 80px;
+  z-index: -1;
+}
+.main_servicios .titulos_servicios {
+  display: flex;
+  align-content: center;
+  justify-content: center;
   color: white;
-  justify-items: center;
-  font-size: 60px;
+  font-size: 50px;
+  font-weight: 400;
+  text-align: center;
+  margin: 20px;
+}
+.main_servicios .textos_servicios {
+  font-family: "Inter Tight", sans-serif;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  margin: 20px;
+}
+.main_servicios .fotos_servicios {
+  width: 50%;
+  margin: 10px;
 }
 
-#carouselExampleControls {
-  width: 600px;
+.main_productos {
+  font-family: "Inter Tight", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 100px;
+  margin-bottom: 80px;
+  color: white;
+  z-index: -1;
+}
+.main_productos .fotos_productos {
+  margin: 20px;
 }
 
-#formulario {
+.main_contacto {
+  font-family: "Inter Tight", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 100px;
+  z-index: -1;
+  width: 100%;
+  height: auto;
+  margin-bottom: 100px;
+}
+.main_contacto .titulo_main_contacto {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  color: white;
+  font-size: 40px;
+  font-weight: 300;
+  position: relative;
+  top: 0;
+}
+.main_contacto .section_main_contacto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
+  color: rgb(9, 0, 48);
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  font-weight: 300;
+  text-justify: auto;
+  text-align: center;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px;
+  position: relative;
+  top: 0;
+}
+.main_contacto #formulario {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 20%;
+  width: 100%;
   padding: 5%;
+  position: relative;
+  top: 0;
 }
-
-label {
+.main_contacto label {
+  font-size: 20px;
+  color: white;
+  border-style: none;
+  text-align: left;
+}
+.main_contacto input {
+  border-radius: 20px;
+  border-style: none;
+  padding: 10px;
+  margin: 10px;
+  width: 95%;
+}
+.main_contacto ::-moz-placeholder {
   font-size: 12px;
-}
-
-::-moz-placeholder {
-  font-size: 9px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-style: oblique;
-}
-
-:-ms-input-placeholder {
-  font-size: 9px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-style: oblique;
-}
-
-::placeholder {
-  font-size: 9px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-style: oblique;
-}
-
-button {
   font-family: "Inter Tight", sans-serif;
-  font-weight: bold;
+  font-style: oblique;
+}
+.main_contacto :-ms-input-placeholder {
+  font-size: 12px;
+  font-family: "Inter Tight", sans-serif;
+  font-style: oblique;
+}
+.main_contacto ::placeholder {
+  font-size: 12px;
+  font-family: "Inter Tight", sans-serif;
+  font-style: oblique;
+}
+.main_contacto textarea {
+  border-radius: 20px;
+  border-style: none;
+  padding: 20px;
+  margin: 10px;
+}
+.main_contacto button {
+  font-family: "Inter Tight", sans-serif;
+  font-weight: 500;
+  border-radius: 10px;
+  border-style: none;
+  padding: 5px;
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: rgb(41, 141, 223);
 }
 
-#texto_home {
-  text-align: center;
-}
-
-#video_home {
-  padding-top: 20px;
-  padding-bottom: 50px;
-  width: 400px;
-}
-
-@media only screen and (max-width: 600px) {
-  #titulo_aldan {
-    text-align: center;
-    color: rgb(9, 0, 48);
-    font-size: 40px;
-    padding-top: 20px;
-  }
-}
 footer {
-  height: 40px;
   color: white;
   background-color: rgb(4, 0, 22);
   font-family: "Inter Tight", sans-serif;
-  font-weight: 200;
+  font-weight: 100;
   font-size: 12px;
   display: flex;
   padding: 10px;
-  justify-content: flex-start;
+  justify-content: space-evenly;
+  align-content: space-between;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
-#carouselExampleControls {
-  width: 400px;
+.ubicacion {
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  text-align: center;
+  font-family: "Inter Tight", sans-serif;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 100px;
+}
+.ubicacion iframe {
+  border-radius: 20px;
 }
 
-.fotos_servicios {
-  width: 100px;
+@media only screen and (max-width: 600px) {
+  header {
+    height: 16vw;
+  }
+  header #logo {
+    height: 14vw;
+  }
+  header #titulo_aldan {
+    font-size: 8vw;
+  }
+  nav {
+    top: 16vw;
+  }
+  nav .navbar {
+    display: flex;
+    flex-direction: column;
+  }
+  footer {
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+  }
+  .main_home #carousel_main_home {
+    width: 90%;
+  }
+  .main_home #titulo_main_home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .main_home #titulo_main_home .titulo {
+    font-size: 25px;
+  }
 }/*# sourceMappingURL=estilo.css.map */
